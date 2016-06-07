@@ -14,9 +14,13 @@ Examples
 
 Standard examples are given together with a selection of cases from the excellent [paper] "Electric field lines don't work" by Wolf, Van Hook and Weeks (*Am. J. Phys., 64,* 1996).
 
-The colours in each image give the log10 of the field magnitude.
+In each case lines are initialized symmetrically close to one (or more) charges.  Paths are determined numerically from the [streamline equation] using the `vode` ODE solver.
+
+The colours in each image give the logarithm (base-10) of the field magnitude.
 
 [paper]: http://scitation.aip.org/content/aapt/journal/ajp/64/6/10.1119/1.18237
+
+[streamline equation]: http://folk.uib.no/fcihh/seminar/lec1.pdf
 
 
 ### Dipole ###
@@ -28,7 +32,7 @@ The colours in each image give the log10 of the field magnitude.
 
 ### Biased Dipole ###
 
-The left charge is +2 and the right charge -1.  Field lines emanate symmetrically from the -1 charge, and also symmetrically in the far field.  The +2 charge exhibits "equatorial clumping" of the field lines.  The zero-field point (in black) would have lines entering from above and below in 3D so that the electric field is non-divergent.
+The left charge is +2 and the right charge -1.  Field lines are initialized symmetrically around the -1 charge, and again symmetrically in the far field.  Notice that the +2 charge exhibits "equatorial clumping" of the field lines.  This is the expected behaviour.  The zero-field point (in black) appears to be divergent but it is not.  There are lines entering from above and below in 3D so that the electric field is non-divergent.  Clumping and 2D divergence are artefacts of taking a 2D slice of a 3D field.
 
 ![Biased dipole.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/biased-dipole.png)
 
@@ -37,7 +41,7 @@ The left charge is +2 and the right charge -1.  Field lines emanate symmetricall
 
 ### Biased Dipole in Flatland ###
 
-This example is for an electric field that is non-divergent in 2D (i.e., Flatland).  Notice that the zero-field point has lines both entering and leaving it.  There is also no equatorial clumping as in the previous example.  The purported defects in the biased dipole example are an artifact of taking a slice of the 3D field.
+This example is for a theoretical electric field that is non-divergent in 2D (i.e., Flatland).  There is no clumping and the zero-field point has the same number of lines entering and leaving it, as expected.  This example confirms that the calculations are correct.
 
 ![Biased dipole in Flatland.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/biased-dipole-flatland.png)
 
@@ -46,7 +50,7 @@ This example is for an electric field that is non-divergent in 2D (i.e., Flatlan
 
 ### Line - Point ###
 
-Both the line and point have the same amount of charge.  Lines are distributed symmetrically around the point charge and connect to the line where they will.
+Both the line and point have the same amount of charge.  Lines are initialized symmetrically around the point charge.  That they are not symmetric where they connect to the line is a 2D slice artefact.
 
 ![Line - point.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/line-point.png)
 
@@ -55,7 +59,7 @@ Both the line and point have the same amount of charge.  Lines are distributed s
 
 ### Line - Line ###
 
-The lines are distributed equally around one line and connect to the other symmetrically.
+The lines are initialized symmetrically close to one line and connect to the other symmetrically, as expected.
 
 ![Line - line.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/line-line.png)
 
@@ -78,7 +82,7 @@ The lines are distributed equally around one line and connect to the other symme
 
 ### Linear Quadrupole ###
 
-The middle charge is -4 and the outer charges are +2.  Lines are distributed evenly around the positive charges.  Note the equatorial clumping around the negative charge.
+The middle charge is -4 and the outer charges are +2.  Lines are initialized symmetrically around the positive charges.  Note the equatorial clumping around the negative charge.
 
 ![Linear quadrupole.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/linear-quadrupole.png)
 
@@ -87,7 +91,7 @@ The middle charge is -4 and the outer charges are +2.  Lines are distributed eve
 
 ### Linear Quadrupole with Central Cluster ###
 
-This is like the previous example but with the negative charge divided into a cluster of four -1 charges.  Notice that there is an unequal distribution of lines between the negative charges.  The number of lines is *not* proportional to the amount of charge.
+This is similar to the previous example but with the negative charge divided into a cluster of four -1 charges.  Notice that there is an unequal distribution of lines between the negative charges.  The number of lines is *not* proportional to the amount of charge in a 2D slice of a 3D field.  The lines are also not distributed uniformly around the negative charges.
 
 ![Linear quadrupole with central cluster.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/linear-quadrupole-cluster.png)
 
