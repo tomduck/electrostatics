@@ -27,9 +27,9 @@ from electrostatics import finalize_plot
 
 # pylint: disable=invalid-name
 
-XMIN, XMAX = -40, 40
-YMIN, YMAX = -30, 30
-ZOOM = 5
+XMIN, XMAX = -200, 200
+YMIN, YMAX = -150, 150
+ZOOM = 25
 XOFFSET = 0
 
 electrostatics.init(XMIN, XMAX, YMIN, YMAX, ZOOM, XOFFSET)
