@@ -81,7 +81,7 @@ The cup and point have equal and opposite charges.  Note that few field lines en
 
 ### Quadrupole ###
 
-Another "textbook example" with symmetric lines.
+Another "textbook example" with perfect symmetry.
 
 ![Quadrupole.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/quadrupole.png)
 
