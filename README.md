@@ -25,6 +25,8 @@ The colours in each image give the logarithm (base-10) of the field magnitude.
 
 ### Dipole ###
 
+The left charge is +1 and the right charge is -1.  In "textbook examples" like this the lines are symmetrically distributed around each charge no matter which charge they are initialized around.
+
 ![Dipole.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/dipole.png)
 
 [Source.](https://github.com/tomduck/electrostatics/blob/master/examples/dipole.py)
@@ -32,7 +34,7 @@ The colours in each image give the logarithm (base-10) of the field magnitude.
 
 ### Biased Dipole ###
 
-The left charge is +2 and the right charge -1.  Field lines are initialized symmetrically around the -1 charge, and again symmetrically in the far field.  Notice that the +2 charge exhibits "equatorial clumping" of the field lines.  This is the expected behaviour.  The zero-field point (in black) appears to be divergent but it is not.  There are lines entering from above and below in 3D so that the electric field is non-divergent.  Clumping and 2D divergence are artefacts of taking a 2D slice of a 3D field.
+The left charge is +2 and the right charge -1.  Field lines are initialized symmetrically around the -1 charge, and again symmetrically in the far field.  Notice that the +2 charge exhibits "equatorial clumping" of the field lines.  This is the expected behaviour (see [Wolf et al, 1996][paper]).  Notice that the zero-field point (in black) has two lines exiting it.  There are lines entering from above and below in 3D so that the electric field is non-divergent.  Clumping and 2D divergence are artefacts of taking a 2D slice of a 3D field.
 
 ![Biased dipole.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/biased-dipole.png)
 
@@ -41,7 +43,9 @@ The left charge is +2 and the right charge -1.  Field lines are initialized symm
 
 ### Biased Dipole in Flatland ###
 
-This example is for a theoretical electric field that is non-divergent in 2D (i.e., Flatland).  There is no clumping and the zero-field point has the same number of lines entering and leaving it, as expected.  This example confirms that the calculations are correct.
+This example is for a theoretical electric field that is non-divergent in 2D (i.e., [Flatland]).  There is no clumping and the zero-field point has the same number of lines entering and leaving it, as expected.  This example confirms that the calculations are correct.
+
+[Flatland]: https://en.wikipedia.org/wiki/Flatland
 
 ![Biased dipole in Flatland.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/biased-dipole-flatland.png)
 
@@ -68,12 +72,16 @@ The lines are initialized symmetrically close to one line and connect to the oth
 
 ### Cup - Point ###
 
+The cup and point have equal and opposite charges.  Note that few field lines enter the cup.
+
 ![Cup - point.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/cup-point.png)
 
 [Source.](https://github.com/tomduck/electrostatics/blob/master/examples/cup-point.py)
 
 
 ### Quadrupole ###
+
+Another "textbook example" with symmetric lines.
 
 ![Quadrupole.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/quadrupole.png)
 
