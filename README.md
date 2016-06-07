@@ -14,9 +14,9 @@ Examples
 
 Textbook examples are provide along with a selection of cases from the excellent [paper] "Electric field lines don't work" by Wolf, Van Hook and Weeks (*Am. J. Phys., 64,* 1996).
 
-In each case lines are initialized symmetrically close to one (or more) charges.  Paths are determined numerically from the [streamline equation] using the `vode` ODE solver.  The integration was adapted from Heiko Bauke's [page] on "Visualizing Streamlines".
+In each case lines are initialized symmetrically close to one (or more) charges.  Paths are determined numerically from the [streamline equation] using the `vode` ODE solver.  The integration parameters were adapted from Heiko Bauke's [page] on "Visualizing Streamlines".
 
-The colours in each image give the logarithm of the field magnitude.  Each colour step represents a 0.2 change in log-10 space (5 steps represents a decade).
+The colours in each image give the logarithm of the field magnitude.  Each colour step represents a 0.2 change in log-10 space (5 steps represents a decade).  The field in close proximity to a charge is clipped to a maximum value.
 
 [paper]: http://scitation.aip.org/content/aapt/journal/ajp/64/6/10.1119/1.18237
 
