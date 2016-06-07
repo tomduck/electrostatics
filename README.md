@@ -82,6 +82,6 @@ Standard examples are given together with a selection of cases from the excellen
 
 ### False Monopole ###
 
-![False monopole.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/linear-quadrupole.png)
+![False monopole.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/false-monopole.png)
 
 [Source.](https://github.com/tomduck/electrostatics/blob/master/examples/false-monopole.py)
