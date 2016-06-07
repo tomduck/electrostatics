@@ -50,7 +50,7 @@ g[3].a0 = radians(-90)
 # Create the field lines
 fieldlines = []
 for g_ in g[:-1]:
-    for x in g_.fluxpoints(field, 14):
+    for x in g_.fluxpoints(field, 12):
         fieldlines.append(field.line(x))
 
 # Plotting

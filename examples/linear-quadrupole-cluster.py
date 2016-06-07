@@ -28,7 +28,7 @@ from electrostatics import finalize_plot
 
 XMIN, XMAX = -40, 40
 YMIN, YMAX = -30, 30
-ZOOM = 5
+ZOOM = 6
 XOFFSET = 0
 
 electrostatics.init(XMIN, XMAX, YMIN, YMAX, ZOOM, XOFFSET)
@@ -51,7 +51,7 @@ g[3].a0 = radians(-90)
 # Create the field lines
 fieldlines = []
 for g_ in [g[0], g[5]]:
-    for x in g_.fluxpoints(field, 14):
+    for x in g_.fluxpoints(field, 12):
         fieldlines.append(field.line(x))
 
 # Plotting

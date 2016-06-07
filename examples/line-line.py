@@ -29,7 +29,7 @@ from electrostatics import finalize_plot
 
 XMIN, XMAX = -200, 200
 YMIN, YMAX = -150, 150
-ZOOM = 25
+ZOOM = 35
 XOFFSET = 0
 
 electrostatics.init(XMIN, XMAX, YMIN, YMAX, ZOOM, XOFFSET)
@@ -42,8 +42,8 @@ field = ElectricField(charges)
 
 # Create the flux points manually
 fluxpoints = []
-fluxpoints += list([-0.51, y] for y in numpy.linspace(-a, a, 9)[1:-1])
-fluxpoints += list([-0.49, y] for y in numpy.linspace(-a, a, 9)[1:-1])
+fluxpoints += list([-0.51, y] for y in numpy.linspace(-a, a, 7)[1:-1])
+fluxpoints += list([-0.49, y] for y in numpy.linspace(-a, a, 7)[1:-1])
 fluxpoints += [[-0.5, -a-0.01], [-0.5, a+0.01]]
 
 # Create the field lines

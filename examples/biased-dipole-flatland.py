@@ -43,14 +43,14 @@ g = GaussianCircle(charges[0].x, 0.1)
 
 # Create the field lines
 fieldlines = []
-for x in g.fluxpoints(field, 28):
+for x in g.fluxpoints(field, 24):
     fieldlines.append(field.line(x))
 fieldlines.append(field.line([3, 0]))
 fieldlines.append(field.line([5, 0]))
 
 # Plotting
 fig = pyplot.figure(figsize=(6, 4.5))
-field.plot(-1.5, 0.7)
+field.plot(-1.7, 0.7)
 for fieldline in fieldlines:
     fieldline.plot()
 for charge in charges:
