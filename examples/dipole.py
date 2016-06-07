@@ -18,6 +18,8 @@
 """Plots field lines for dipole."""
 
 from matplotlib import pyplot
+import numpy
+
 import electrostatics
 from electrostatics import PointCharge, ElectricField, GaussianCircle
 from electrostatics import finalize_plot
@@ -45,7 +47,22 @@ for x in g.fluxpoints(field, 12):
     fieldlines.append(field.line(x))
 fieldlines.append(field.line([10, 0]))
 
-# Plotting
+# Create the vector grid
+x, y = numpy.meshgrid(numpy.linspace(XMIN/ZOOM+XOFFSET, XMAX/ZOOM+XOFFSET, 28),
+                      numpy.linspace(YMIN/ZOOM, YMAX/ZOOM, 18))
+u, v = numpy.zeros_like(x), numpy.zeros_like(y)
+n, m = x.shape
+scale = 1/field.magnitude([XMIN/ZOOM+XOFFSET, YMIN/ZOOM])
+for i in range(n):
+    for j in range(m):
+        mag = numpy.log10(field.magnitude([x[i, j], y[i, j]])*scale)
+        a = field.angle([x[i, j], y[i, j]])
+        u[i, j], v[i, j] = mag*numpy.cos(a), mag*numpy.sin(a)
+
+
+## Plotting ##
+
+# Field lines
 pyplot.figure(figsize=(6, 4.5))
 field.plot()
 for fieldline in fieldlines:
@@ -53,4 +70,13 @@ for fieldline in fieldlines:
 for charge in charges:
     charge.plot()
 finalize_plot()
+
+# Field vectors
+pyplot.figure(figsize=(6, 4.5))
+cmap = pyplot.cm.get_cmap('plasma')
+pyplot.quiver(x, y, u, v, mag, pivot='mid', cmap=cmap, scale=75)
+for charge in charges:
+    charge.plot()
+finalize_plot()
+
 pyplot.show()

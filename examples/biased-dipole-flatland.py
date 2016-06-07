@@ -50,7 +50,7 @@ fieldlines.append(field.line([5, 0]))
 
 # Plotting
 pyplot.figure(figsize=(6, 4.5))
-field.plot(-1.7, 0.7)
+field.plot(-1.7, 0.8)
 for fieldline in fieldlines:
     fieldline.plot()
 for charge in charges:

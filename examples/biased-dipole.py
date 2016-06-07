@@ -51,7 +51,7 @@ for x in g2.fluxpoints(field, 12):
 
 # Plotting
 pyplot.figure(figsize=(6, 4.5))
-field.plot(nmin=-3.5)
+field.plot()
 for fieldline in fieldlines:
     fieldline.plot()
 for charge in charges:

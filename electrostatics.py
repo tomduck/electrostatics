@@ -19,7 +19,7 @@
 import functools
 
 import numpy
-from numpy import array, linspace, meshgrid, zeros_like, ones_like
+from numpy import array, arange, linspace, meshgrid, zeros_like, ones_like
 from numpy import log10, sin, cos, arctan2, arccos, sqrt, fabs, cumsum
 from numpy import radians, pi, infty
 from numpy import dot, cross
@@ -334,7 +334,7 @@ class ElectricField:
 
         return FieldLine(x)
 
-    def plot(self, nmin=-3, nmax=1):
+    def plot(self, nmin=-3.5, nmax=1.5):
         """Plots the field magnitude."""
         x, y = meshgrid(
             linspace(XMIN/ZOOM+XOFFSET, XMAX/ZOOM+XOFFSET, 200),
@@ -343,7 +343,7 @@ class ElectricField:
         for i in range(x.shape[0]):
             for j in range(x.shape[1]):
                 z[i, j] = log10(self.magnitude([x[i, j], y[i, j]]))
-        levels = linspace(nmin, nmax, 20)
+        levels = arange(nmin, nmax+0.2, 0.2)
         cmap = pyplot.cm.get_cmap('plasma')
         pyplot.contourf(x, y, numpy.clip(z, nmin, nmax),
                         10, cmap=cmap, levels=levels, extend='both')
