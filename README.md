@@ -16,7 +16,7 @@ Textbook examples are provide along with a selection of cases from the excellent
 
 In each case lines are initialized symmetrically close to one (or more) charges.  Paths are determined numerically from the [streamline equation] using the `vode` ODE solver.
 
-The colours in each image give the logarithm (base-10) of the field magnitude.
+The colours in each image give the logarithm of the field magnitude.
 
 [paper]: http://scitation.aip.org/content/aapt/journal/ajp/64/6/10.1119/1.18237
 
