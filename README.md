@@ -12,3 +12,5 @@ I am pleased to receive bug reports and feature requests on the project's [Issue
 [images]:
 [paper]: http://scitation.aip.org/content/aapt/journal/ajp/64/6/10.1119/1.18237
 [Issues tracker]: https://github.com/tomduck/electrostatics/issues
+
+![Biased dipole in Flatland.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/biased-dipole-flatland.png)
