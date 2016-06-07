@@ -12,7 +12,7 @@ I am pleased to receive bug reports and feature requests on the project's [Issue
 Examples
 --------
 
-Textbook examples are provide along with a selection of cases from the excellent [paper] "Electric field lines don't work" by Wolf, Van Hook and Weeks (*Am. J. Phys., 64,* 1996).
+Textbook examples are given below along with a selection of cases from the excellent [paper] "Electric field lines don't work" by Wolf, Van Hook and Weeks (*Am. J. Phys., 64,* 1996).
 
 In each case lines are initialized symmetrically close to one (or more) charges.  Paths are determined numerically from the [streamline equation] using an ODE solver.  The integration parameters were adapted from Heiko Bauke's [page] on "Visualizing Streamlines".
 
