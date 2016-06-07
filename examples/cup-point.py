@@ -49,7 +49,7 @@ for x in g.fluxpoints(field, 15):
 fieldlines.append(field.line([-3, 0]))
 
 # Plotting
-fig = pyplot.figure(figsize=(6, 4.5))
+pyplot.figure(figsize=(6, 4.5))
 field.plot()
 for fieldline in fieldlines:
     fieldline.plot()

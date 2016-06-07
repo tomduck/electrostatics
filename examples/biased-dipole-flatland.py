@@ -49,7 +49,7 @@ fieldlines.append(field.line([3, 0]))
 fieldlines.append(field.line([5, 0]))
 
 # Plotting
-fig = pyplot.figure(figsize=(6, 4.5))
+pyplot.figure(figsize=(6, 4.5))
 field.plot(-1.7, 0.7)
 for fieldline in fieldlines:
     fieldline.plot()

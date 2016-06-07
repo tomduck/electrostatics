@@ -54,7 +54,7 @@ for g_ in g[:-1]:
         fieldlines.append(field.line(x))
 
 # Plotting
-fig = pyplot.figure(figsize=(6, 4.5))
+pyplot.figure(figsize=(6, 4.5))
 field.plot()
 for fieldline in fieldlines:
     fieldline.plot(endarrows=False)

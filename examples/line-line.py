@@ -53,7 +53,7 @@ for x in fluxpoints:
 fieldlines.append(field.line([10, 0]))
 
 # Plotting
-fig = pyplot.figure(figsize=(6, 4.5))
+pyplot.figure(figsize=(6, 4.5))
 field.plot()
 for fieldline in fieldlines:
     fieldline.plot()
