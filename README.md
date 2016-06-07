@@ -2,13 +2,12 @@
 electrostatics 0.1
 ==================
 
-*electrostatics.py* is a python module for electrostatics field line calculations.
+*electrostatics.py* is a python module for electrostatics field calculations and field line plots.  Install it by executing `python3 setup.py install` from the shell as root.  Examples that demonstrate its use are given below.
 
 I am pleased to receive bug reports and feature requests on the project's [Issues tracker].
 
-[examples]:
-[images]:
 [Issues tracker]: https://github.com/tomduck/electrostatics/issues
+
 
 Examples
 --------
@@ -16,6 +15,7 @@ Examples
 Standard examples are given together with a selection of cases from the excellent [paper] "Electric field lines don't work" by Wolf, Van Hook and Weeks (*Am. J. Phys., 64,* 1996).
 
 [paper]: http://scitation.aip.org/content/aapt/journal/ajp/64/6/10.1119/1.18237
+
 
 ### Dipole ###
 
