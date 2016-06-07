@@ -108,7 +108,7 @@ This is similar to the previous example but with the negative charge divided int
 
 ### False Monopole ###
 
-Here we have a -4 central charge surrounded by four +1 charges.  21% of the lines diverge to infinity, leading one to incorrectly surmise a net positive charge.
+Here we have a -4 central charge surrounded by four +1 charges.  25% of the lines diverge to infinity, leading a distant observer to incorrectly surmise a net +1 charge.
 
 ![False monopole.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/false-monopole.png)
 
