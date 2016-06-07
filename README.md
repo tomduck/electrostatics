@@ -31,7 +31,7 @@ The left charge is +1 and the right charge is -1.  In textbook examples like thi
 
 ![Dipole.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/dipole.png)
 
-Below is the corresponding electric field vector plot.  The length of the vectors is the fifth root of the electric field magnitude.  This is necessary so that the vectors can be seen throughout the space.  The field line diagrams make visualizing the field much easier.
+Below is the corresponding electric field vector plot.  The length of the vectors is the fifth root of the electric field magnitude.   The field line diagrams make visualizing the field much easier.
 
 ![Dipole vectors.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/dipole-vectors.png)
 
