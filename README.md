@@ -27,7 +27,7 @@ The colours in each image give the logarithm of the field magnitude.  Each colou
 
 ### Dipole ###
 
-The left charge is +1 and the right charge is -1.  In "textbook examples" like this the lines are symmetrically distributed around each charge no matter which charge they are initialized around.
+The left charge is +1 and the right charge is -1.  In textbook examples like this the lines are symmetrically distributed around each charge no matter which charge they are initialized around.
 
 ![Dipole.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/dipole.png)
 
@@ -52,6 +52,15 @@ This example is for a theoretical electric field that is non-divergent in 2D (i.
 ![Biased dipole in Flatland.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/biased-dipole-flatland.png)
 
 [Source.](https://github.com/tomduck/electrostatics/blob/master/examples/biased-dipole-flatland.py)
+
+
+### Two Positive Charges ###
+
+Another textbook example.  Note, however, that equatorial clumping is observed in the far field.
+
+![Two positive charges.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/two-positive-charges.png)
+
+[Source.](https://github.com/tomduck/electrostatics/blob/master/examples/two-positive-charges.py)
 
 
 ### Line - Point ###
@@ -83,7 +92,7 @@ The cup and point have equal and opposite charges.  Note that few field lines en
 
 ### Quadrupole ###
 
-Another "textbook example" with perfect symmetry.
+Another textbook example with perfect symmetry.
 
 ![Quadrupole.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/quadrupole.png)
 
