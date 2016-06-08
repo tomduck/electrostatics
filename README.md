@@ -40,7 +40,7 @@ Below is the corresponding electric field vector plot.  The length of the vector
 
 ### Biased Dipole ###
 
-The left charge is +2 and the right charge -1.  Field lines are initialized symmetrically around the -1 charge, and again symmetrically in the far field.  Notice that the +2 charge exhibits "equatorial clumping" of the field lines.  This is the correct behaviour (see [Wolf et al, 1996][paper]).  Notice that the zero-field point (in black) has two lines exiting it.  There are lines entering from behind and in front of the page in 3D so that the electric field is non-divergent.  Clumping and 2D divergence are artefacts of taking a 2D slice of a 3D field.
+The left charge is +2 and the right charge -1.  Field lines are initialized symmetrically around the -1 charge, and again symmetrically in the far field.  Notice that the +2 charge exhibits "equatorial clumping" of the field lines, and that there is divergence from the zero-field point (in black).  Equatorial clumping and 2D divergence are artefacts that arise from taking a 2D slice of a 3D field.
 
 ![Biased dipole.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/biased-dipole.png)
 
@@ -49,7 +49,7 @@ The left charge is +2 and the right charge -1.  Field lines are initialized symm
 
 ### Biased Dipole in Flatland ###
 
-This example is for a theoretical electric field that is non-divergent in 2D (i.e., [Flatland]).  There is no clumping and the zero-field point has the same number of lines entering and leaving it, as expected.  This example confirms that the calculations are correct.
+This example is for a theoretical electric field that is non-divergent in 2D (i.e., [Flatland]).  There is no clumping and the zero-field point has the same number of lines entering and leaving it, as expected.
 
 [Flatland]: https://en.wikipedia.org/wiki/Flatland
 
@@ -69,7 +69,7 @@ This is another textbook example.  Note the equatorial clumping in the far field
 
 ### Line - Point ###
 
-Both the line and point have the same amount of charge.  Lines are initialized symmetrically around the point charge.  That they are not symmetric where they connect to the line is a 2D slice artefact.
+Both the line and point have the same amount of charge.  Lines are initialized symmetrically around the point charge.  That they do not connect to the line symmetrically is a 2D slice artefact.
 
 ![Line - point.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/line-point.png)
 
