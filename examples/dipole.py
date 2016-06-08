@@ -65,20 +65,22 @@ for i in range(n):
 ## Plotting ##
 
 # Field lines
-pyplot.figure(figsize=(6, 4.5))
+fig = pyplot.figure(figsize=(6, 4.5))
 field.plot()
 for fieldline in fieldlines:
     fieldline.plot()
 for charge in charges:
     charge.plot()
 finalize_plot()
+#fig.savefig('dipole-field-lines.pdf', transparent=True)
 
 # Field vectors
-pyplot.figure(figsize=(6, 4.5))
+fig = pyplot.figure(figsize=(6, 4.5))
 cmap = pyplot.cm.get_cmap('plasma')
 pyplot.quiver(x, y, u, v, pivot='mid', cmap=cmap, scale=35)
 for charge in charges:
     charge.plot()
 finalize_plot()
+#fig.savefig('dipole-field-vectors.pdf', transparent=True)
 
 pyplot.show()
