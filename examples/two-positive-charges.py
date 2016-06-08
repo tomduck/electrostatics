@@ -42,6 +42,7 @@ field = ElectricField(charges)
 
 # Set up the Gaussian surfaces
 g = [GaussianCircle(charges[i].x, 0.1) for i in range(len(charges))]
+g[0].a0 = radians(-180)
 
 # Create the field lines
 fieldlines = []
