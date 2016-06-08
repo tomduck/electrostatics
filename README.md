@@ -40,7 +40,7 @@ Below is the corresponding electric field vector plot.  The length of the vector
 
 ### Biased Dipole ###
 
-The left charge is +2 and the right charge -1.  Field lines are initialized symmetrically around the -1 charge, and again symmetrically in the far field.  Notice that the +2 charge exhibits "equatorial clumping" of the field lines.  This is the expected behaviour (see [Wolf et al, 1996][paper]).  Notice that the zero-field point (in black) has two lines exiting it.  There are lines entering from behind and in front of the page in 3D so that the electric field is non-divergent.  Clumping and 2D divergence are artefacts of taking a 2D slice of a 3D field.
+The left charge is +2 and the right charge -1.  Field lines are initialized symmetrically around the -1 charge, and again symmetrically in the far field.  Notice that the +2 charge exhibits "equatorial clumping" of the field lines.  This is the correct behaviour (see [Wolf et al, 1996][paper]).  Notice that the zero-field point (in black) has two lines exiting it.  There are lines entering from behind and in front of the page in 3D so that the electric field is non-divergent.  Clumping and 2D divergence are artefacts of taking a 2D slice of a 3D field.
 
 ![Biased dipole.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/biased-dipole.png)
 
