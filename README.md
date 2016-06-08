@@ -60,7 +60,7 @@ This example is for a theoretical electric field that is non-divergent in 2D (i.
 
 ### Two Positive Charges ###
 
-Another textbook example.  Note, however, that equatorial clumping is observed in the far field.
+This is another textbook example.  Note the equatorial clumping in the far field and the point of 2D convergence in the middle.
 
 ![Two positive charges.](https://raw.githubusercontent.com/tomduck/electrostatics/master/images/two-positive-charges.png)
 
