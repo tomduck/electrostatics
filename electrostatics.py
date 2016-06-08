@@ -31,6 +31,7 @@ from numpy.linalg import det
 from scipy.integrate import ode
 from scipy.interpolate import splrep, splev
 
+import matplotlib
 from matplotlib import pyplot
 
 # The area of interest
@@ -231,23 +232,28 @@ class FieldLine:
         "Initializes the field line points 'x'."""
         self.x = x
 
-    def plot(self, startarrows=True, endarrows=True):
+    def plot(self, linewidth=None, startarrows=True, endarrows=True):
         """Plots the field line and arrows."""
 
+        if linewidth == None:
+            linewidth = matplotlib.rcParams['lines.linewidth']
+        
         x, y = zip(*self.x)
-        pyplot.plot(x, y, '-k')
+        pyplot.plot(x, y, '-k', linewidth=linewidth)
 
         n = int(len(x)/2) if len(x) < 225 else 75
         if startarrows:
             pyplot.arrow(x[n], y[n], (x[n+1]-x[n])/100., (y[n+1]-y[n])/100.,
-                         fc="k", ec="k", head_width=0.1, head_length=0.1)
+                         fc="k", ec="k",
+                         head_width=0.1*linewidth, head_length=0.1*linewidth)
 
         if len(x) < 225 or not endarrows:
             return
 
         pyplot.arrow(x[-n], y[-n],
                      (x[-n+1]-x[-n])/100., (y[-n+1]-y[-n])/100.,
-                     fc="k", ec="k", head_width=0.1, head_length=0.1)
+                     fc="k", ec="k",
+                     head_width=0.1*linewidth, head_length=0.1*linewidth)
 
 
 class ElectricField:
