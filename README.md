@@ -1,12 +1,20 @@
 
-electrostatics 0.1
-==================
+electrostatics
+==============
 
-*electrostatics.py* is a python module for electrostatics field calculations and field line plots.  Install it by downloading the source and executing `python3 setup.py install` from the shell as root.  Examples that demonstrate its use are given below.
+*electrostatics.py* is a python module for electrostatics field calculations and field line plots.
 
-I am pleased to receive bug reports and feature requests on the project's [Issues tracker].
 
-[Issues tracker]: https://github.com/tomduck/electrostatics/issues
+Installation
+------------
+
+Install into python3 (as root) by executing
+
+~~~
+# pip3 install git+https://github.com/tomduck/electrostatics.git
+~~~
+
+Alternatively, download the source and run `setup.py`.
 
 
 Examples
