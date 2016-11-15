@@ -8,13 +8,13 @@ electrostatics
 Installation
 ------------
 
-Install into python3 (as root) by executing
+Install into python3 by executing (as root) 
 
 ~~~
 # pip3 install git+https://github.com/tomduck/electrostatics.git
 ~~~
 
-Alternatively, download the source and run `setup.py`.
+Alternatively, download the source and run (as root)  `setup.py install`.
 
 
 Examples
