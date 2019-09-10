@@ -2,27 +2,25 @@
 electrostatics
 ==============
 
-*electrostatics.py* is a python module for electrostatics field calculations and field line plots.
+*electrostatics.py* is a python module for electrostatics field and potential calculations, and field line and equipotential contour plots.
 
 
 Installation
 ------------
 
-Install into python3 by executing (as root) 
+Install into python by executing
 
 ~~~
-# pip3 install git+https://github.com/tomduck/electrostatics.git
+# pip install git+https://github.com/tomduck/electrostatics.git --user
 ~~~
-
-Alternatively, download the source and run (as root)  `setup.py install`.
 
 
 Examples
 --------
 
-Textbook examples are given below along with a selection of cases from the excellent [paper] "Electric field lines don't work" by Wolf, Van Hook and Weeks (*Am. J. Phys., 64,* 1996).
+Textbook examples are given below along with a selection of cases from the excellent [paper] "Electric field lines don't work" by Wolf, Van Hook and Weeks (*Am. J. Phys., 64,* 1996).  Solid lines are the field lines, dotted lines are equipotential contours, and colours give the field strength.
 
-In each case lines are initialized symmetrically close to one (or more) charges.  Paths are determined numerically from the [streamline equation] using an ODE solver.  The integration parameters were adapted from Heiko Bauke's [page] on "Visualizing Streamlines".
+In each case field lines are initialized symmetrically close to one (or more) charges.  Paths are determined numerically from the [streamline equation] using an ODE solver.  The integration parameters were adapted from Heiko Bauke's [page] on "Visualizing Streamlines".
 
 The colours in each image give the logarithm of the field magnitude.  Each colour step represents a 0.2 change in log-10 space (5 steps represents a decade).  The field in close proximity to a charge is clipped to a maximum value.
 
