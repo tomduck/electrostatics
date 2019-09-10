@@ -189,7 +189,7 @@ class LineCharge:
         # Calculate the parallel and perpendicular components
         sign = where(is_left(x, x1, x2), 1, -1)
 
-        # pylint: disable=invalid-name
+        # pylint: disable=invalid-name, invalid-unary-operand-type
         Epara = lam*(1/r2-1/r1)
         Eperp = -sign*lam*(cos(theta2)-cos(theta1))/where(a == 0, infty, a)
 
@@ -245,7 +245,7 @@ class FieldLine:
             linewidth = matplotlib.rcParams['lines.linewidth']
 
         x, y = zip(*self.x)
-        pyplot.plot(x, y, '-k', linewidth=linewidth, linestyle = linestyle)
+        pyplot.plot(x, y, '-k', linewidth=linewidth, linestyle=linestyle)
 
         n = int(len(x)/2) if len(x) < 225 else 75
         if startarrows:
@@ -354,6 +354,7 @@ class ElectricField:
         z = zeros_like(x)
         for i in range(x.shape[0]):
             for j in range(x.shape[1]):
+                # pylint: disable=unsupported-assignment-operation
                 z[i, j] = log10(self.magnitude([x[i, j], y[i, j]]))
         levels = arange(nmin, nmax+0.2, 0.2)
         cmap = pyplot.cm.get_cmap('plasma')
@@ -384,6 +385,7 @@ class Potential:
         z = zeros_like(x)
         for i in range(x.shape[0]):
             for j in range(x.shape[1]):
+                # pylint: disable=unsupported-assignment-operation
                 z[i, j] = self.magnitude([x[i, j], y[i, j]])
         # levels = arange(nmin, nmax+0.2, 0.2)
         # cmap = pyplot.cm.get_cmap('plasma')
