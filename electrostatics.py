@@ -103,7 +103,7 @@ def lininterp2(x1, y1, x):
 
 def finalize_plot():
     """Finalizes the plot."""
-    ax = pyplot.axes()
+    ax = pyplot.gca()
     ax.set_xticks([])
     ax.set_yticks([])
     pyplot.xlim(XMIN/ZOOM+XOFFSET, XMAX/ZOOM+XOFFSET)
