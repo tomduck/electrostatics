@@ -22,7 +22,7 @@ from setuptools import setup
 
 DESCRIPTION = 'Electrostatics calculations and field line diagrams.'
 
-VERSION = '0.1'
+VERSION = '0.2.0'
 
 setup(
     name='electrostatics',

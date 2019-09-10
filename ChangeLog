@@ -1,4 +1,9 @@
 
-electrostatics 0.1 (unreleased)
+electrostatics 0.2.0 (2019-09-10)
+
+    * Added potential calculations and equipotential contour plotting.
+    * Fixed for matplotlib warning (Issue #1).
+
+electrostatics 0.1.0 (2016)
 
     * Initial release

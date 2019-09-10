@@ -1,6 +1,6 @@
 
-electrostatics
-==============
+electrostatics 0.2.0
+====================
 
 *electrostatics.py* is a python module for electrostatics field and potential calculations, and field line and equipotential contour plots.
 
