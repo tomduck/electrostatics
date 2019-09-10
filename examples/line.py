@@ -18,7 +18,6 @@
 """Plots field lines for a line charge."""
 
 from matplotlib import pyplot
-import numpy
 
 import electrostatics
 from electrostatics import LineCharge
@@ -58,4 +57,3 @@ for charge in charges:
     charge.plot()
 finalize_plot()
 pyplot.show()
-

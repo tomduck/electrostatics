@@ -53,10 +53,10 @@ fieldlines = []
 for g_ in g[2:4]:
     for x in g_.fluxpoints(field, 12):
         fieldlines.append(field.line(x))
-fieldlines.append(field.line([-1,0]))
-fieldlines.append(field.line([1,0]))
-fieldlines.append(field.line([-3,0]))
-fieldlines.append(field.line([3,0]))
+fieldlines.append(field.line([-1, 0]))
+fieldlines.append(field.line([1, 0]))
+fieldlines.append(field.line([-3, 0]))
+fieldlines.append(field.line([3, 0]))
 
 # Plotting
 pyplot.figure(figsize=(6, 4.5))

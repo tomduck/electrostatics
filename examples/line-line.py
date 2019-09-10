@@ -63,4 +63,3 @@ for charge in charges:
     charge.plot()
 finalize_plot()
 pyplot.show()
-
