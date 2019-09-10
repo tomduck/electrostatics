@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Copyright 2016 Thomas J. Duck.
+# Copyright 2016, 2019 Thomas J. Duck.
 # All rights reserved.
 #
 # This program is free software: you can redistribute it and/or modify
@@ -21,7 +21,7 @@ from matplotlib import pyplot
 import numpy
 
 import electrostatics
-from electrostatics import PointCharge, ElectricField, GaussianCircle
+from electrostatics import PointCharge, ElectricField, Potential, GaussianCircle
 from electrostatics import finalize_plot
 
 # pylint: disable=invalid-name
@@ -33,10 +33,11 @@ XOFFSET = 0
 
 electrostatics.init(XMIN, XMAX, YMIN, YMAX, ZOOM, XOFFSET)
 
-# Set up the charges and electric field
+# Set up the charges, electric field, and potential
 charges = [PointCharge(1, [-1, 0]),
            PointCharge(-1, [1, 0])]
 field = ElectricField(charges)
+potential = Potential(charges)
 
 # Set up the Gaussian surface
 g = GaussianCircle(charges[0].x, 0.1)
@@ -64,8 +65,9 @@ for i in range(n):
 
 ## Plotting ##
 
-# Field lines
+# Electric field lines and potential contours
 fig = pyplot.figure(figsize=(6, 4.5))
+potential.plot()
 field.plot()
 for fieldline in fieldlines:
     fieldline.plot()

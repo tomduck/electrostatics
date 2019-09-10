@@ -1,5 +1,5 @@
 
-# Copyright 2016 Thomas J. Duck.
+# Copyright 2016, 2019 Thomas J. Duck.
 # All rights reserved.
 #
 # This program is free software: you can redistribute it and/or modify
@@ -49,7 +49,6 @@ def arrayargs(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         """Ensures all args are arrays."""
-        # pylint: disable=star-args
         return func(*[array(a) for a in args], **kwargs)
     return wrapper
 
@@ -128,9 +127,8 @@ class PointCharge:
         """Electric field vector."""
         if self.q == 0:
             return 0
-        else:
-            dx = x-self.x
-            return (self.q*dx.T/numpy.sum(dx**2, axis=-1)**1.5).T
+        dx = x-self.x
+        return (self.q*dx.T/numpy.sum(dx**2, axis=-1)**1.5).T
 
     def V(self, x):  # pylint: disable=invalid-name
         """Potential."""
@@ -212,9 +210,16 @@ class LineCharge:
 
         if theta1 < radians(90) and theta2 < radians(90):
             return point_line_distance(x, self.x1, self.x2) < self.R
-        else:
-            return numpy.min([norm(self.x1-x), norm(self.x2-x)], axis=0) < \
-              self.R
+        return numpy.min([norm(self.x1-x), norm(self.x2-x)], axis=0) < self.R
+
+    def V(self, x):  # pylint: disable=invalid-name
+        """Potential.
+        Ref: https://aapt.scitation.org/doi/pdf/10.1119/1.2348889
+        """
+        r1 = norm(x-self.x1)
+        r2 = norm(x-self.x2)
+        L = norm(self.x2-self.x1)  # pylint: disable=invalid-name
+        return self.lam*numpy.log((r1+r2+L)/(r1+r2-L))
 
     def plot(self):
         """Plots the charge."""
@@ -232,14 +237,15 @@ class FieldLine:
         "Initializes the field line points 'x'."""
         self.x = x
 
-    def plot(self, linewidth=None, startarrows=True, endarrows=True):
+    def plot(self, linewidth=None, linestyle='-',
+             startarrows=True, endarrows=True):
         """Plots the field line and arrows."""
 
-        if linewidth == None:
+        if linewidth is None:
             linewidth = matplotlib.rcParams['lines.linewidth']
-        
+
         x, y = zip(*self.x)
-        pyplot.plot(x, y, '-k', linewidth=linewidth)
+        pyplot.plot(x, y, '-k', linewidth=linewidth, linestyle = linestyle)
 
         n = int(len(x)/2) if len(x) < 225 else 75
         if startarrows:
@@ -355,15 +361,45 @@ class ElectricField:
                         10, cmap=cmap, levels=levels, extend='both')
 
 
+class Potential:
+    """The potential owing to a collection of charges."""
+
+    def __init__(self, charges):
+        """Initializes the field given 'charges'."""
+        self.charges = charges
+
+    def magnitude(self, x):
+        """Returns the magnitude of the potential."""
+        return sum(charge.V(x) for charge in self.charges)
+
+    def plot(self, zmin=-1.5, zmax=1.5, step=0.25, linewidth=1, linestyle=':'):
+        """Plots the field magnitude."""
+
+        if linewidth is None:
+            linewidth = matplotlib.rcParams['lines.linewidth']
+
+        x, y = meshgrid(
+            linspace(XMIN/ZOOM+XOFFSET, XMAX/ZOOM+XOFFSET, 200),
+            linspace(YMIN/ZOOM, YMAX/ZOOM, 200))
+        z = zeros_like(x)
+        for i in range(x.shape[0]):
+            for j in range(x.shape[1]):
+                z[i, j] = self.magnitude([x[i, j], y[i, j]])
+        # levels = arange(nmin, nmax+0.2, 0.2)
+        # cmap = pyplot.cm.get_cmap('plasma')
+        pyplot.contour(x, y, z, numpy.arange(zmin, zmax+step, step),
+                       linewidths=linewidth, linestyles=linestyle, colors='k')
+
+
 # pylint: disable=too-few-public-methods
 class GaussianCircle:
     """A Gaussian circle with radius r."""
 
     def __init__(self, x, r, a0=0):
         """Initializes the Gaussian surface at position vector 'x'
-        and given radius 'r'.  'a0' defines an offset angle CCW from the
-        x-axis.  Use this to identify the axis around which flux points should
-        be symmetric."""
+        and given radius 'r'.  'a0' defines an offset angle (in radians) CCW
+        from the x-axis.  Use this to identify the axis around which flux
+        points should be symmetric."""
         self.x = x
         self.r = r
         self.a0 = a0
@@ -405,5 +441,3 @@ class GaussianCircle:
         a = lininterp2(intflux, a, v)[:-1]
 
         return self.r*array([cos(a), sin(a)]).T + self.x
-
-

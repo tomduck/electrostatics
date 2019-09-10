@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Copyright 2016 Thomas J. Duck.
+# Copyright 2016, 2019 Thomas J. Duck.
 # All rights reserved.
 #
 # This program is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ from numpy import radians
 
 import electrostatics
 from electrostatics import PointCharge
-from electrostatics import ElectricField, GaussianCircle
+from electrostatics import ElectricField, Potential, GaussianCircle
 from electrostatics import finalize_plot
 
 # pylint: disable=invalid-name
@@ -41,6 +41,7 @@ charges = [PointCharge(1, [-2, 0]),
            PointCharge(-1, [0, 2]),
            PointCharge(0, [0, 0])]
 field = ElectricField(charges)
+potential = Potential(charges)
 
 # Set up the Gaussian surfaces
 g = [GaussianCircle(charges[i].x, 0.1) for i in range(len(charges))]
@@ -60,6 +61,7 @@ fieldlines.append(field.line([3,0]))
 # Plotting
 pyplot.figure(figsize=(6, 4.5))
 field.plot()
+potential.plot()
 for fieldline in fieldlines:
     fieldline.plot()
 for charge in charges:

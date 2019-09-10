@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Copyright 2016 Thomas J. Duck.
+# Copyright 2016, 2019 Thomas J. Duck.
 # All rights reserved.
 #
 # This program is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ import numpy
 
 import electrostatics
 from electrostatics import LineCharge
-from electrostatics import ElectricField
+from electrostatics import ElectricField, Potential
 from electrostatics import finalize_plot
 
 # pylint: disable=invalid-name
@@ -34,11 +34,12 @@ XOFFSET = 0
 
 electrostatics.init(XMIN, XMAX, YMIN, YMAX, ZOOM, XOFFSET)
 
-# Set up the charges and electric field
+# Set up the charges, electric field, and potential
 a = 3
 charges = [LineCharge(1, [-0.5, -a], [-0.5, a]),
            LineCharge(-1, [0.5, -a], [0.5, a])]
 field = ElectricField(charges)
+potential = Potential(charges)
 
 # Create the flux points manually
 fluxpoints = []
@@ -55,6 +56,7 @@ fieldlines.append(field.line([10, 0]))
 # Plotting
 pyplot.figure(figsize=(6, 4.5))
 field.plot()
+potential.plot()
 for fieldline in fieldlines:
     fieldline.plot()
 for charge in charges:
